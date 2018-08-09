@@ -1,0 +1,20 @@
+@charset "ISO-8859-1";
+.carousel-inner > .item > img{
+		margin:auto;
+		width:100%;
+}
+
+.legenda_icon { 
+	float: left; 
+	margin: 4px; 
+	background: url(trabalho.JPG) center;
+}
+
+div.tamanhoMeio{
+	width: 50%;
+	display: inline-block;
+}
+
+.panel-body {
+    padding: 2px;
+}
