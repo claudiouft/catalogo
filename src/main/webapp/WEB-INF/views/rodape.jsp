@@ -1,45 +1,31 @@
-<footer class="footer">
-	 <div class="container">
-	 	<hr>
-	 	<hr>
-	 	<div class="row">
-	    	<div class="col-xs-12">
-	    			<div class="col-md-12 text-left">
-				 		 <div class="row">
-					         <div class="col-xs-12 text-center">&copy; 2018 - Catalogo</div>	         
-					     </div>
-				 	</div>
-				 	
-				 	<!-- 
-				 	<div class="col-md-6 text-left">
-				 		 <div class="row">
-					         <div class="col-xs-12 text-left">&copy; 2018 - Catalogo</div>	         
-					     </div>
-				 	</div>
-				 	<div class="col-md-6 text-right">
-				 		<div class="row">
-					         <div class="col-xs-12 text-right">					         	
-					         	<a href="http://twitter.com/share" 
-							     	class="twitter-share-button" 
-									data-url="www.devmedia.com.br" 
-									data-text="Teste" 
-									data-count="horizontal" 
-									data-via="aqui-seu-nome-de-usuario-do-twitter" 
-									data-lang="pt">
-								</a>
-							
-								
-					         </div>         
-					     </div>
-				 	</div>
-				 	 -->
-	    	</div>         
-	    </div>
-	 	<div class="row">
-	    	 <div class="col-xs-12 text-center">Goiânia - GO</div>          
-	    </div>
-	    <div class="row">
-	    	 <div class="col-xs-12 text-center">RC_01</div>          
-	    </div>
-	 </div>     
- </footer>
+<%@ page language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<footer id="foot-sec">
+	<div class="footerdivide">
+	</div>
+	<div class="container ">
+	<div class="row">
+		<div class="text-center color-white col-sm-12 col-lg-12">
+			<ul class="social-icons">
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+			</ul>
+			<p>
+				 <label class="rodape">© Elas Demais</label>
+			</p>
+			<p>
+				<a href="#">Official Website</a> 
+				| 
+				<a href="#">Contato</a> 
+			</p>
+			<p>
+				 <label class="rodape">v-0.2</label>
+			</p>
+		</div>
+	</div>
+	</div>
+</footer>

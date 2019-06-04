@@ -56,17 +56,15 @@ public class JPAConfiguration {
         /**
          * POSTGRES - INICIO
          */
-//        DriverManagerDataSource dataSource = new DriverManagerDataSource();        
-//        dataSource.setUrl("jdbc:postgresql://instanciacatalogodb.ccq6fbjxrb4c.us-east-2.rds.amazonaws.com:5432/dbcatalogo");
-//        dataSource.setUsername("postgres");
-//        dataSource.setPassword("12345678");
-//        dataSource.setDriverClassName("org.postgresql.Driver");
-        
 	    DriverManagerDataSource dataSource = new DriverManagerDataSource();        
-	    dataSource.setUrl("jdbc:postgresql://myinstanciacatalogo.c2vwp9gmpgu8.us-east-1.rds.amazonaws.com:5432/dbcatalogo");
-	    //dataSource.setUrl("jdbc:postgresql://localhost:5432/dbcatalogo");
+	    //dataSource.setUrl("jdbc:postgresql://dbelasdemais.cvkrmfeyge3u.us-east-2.rds.amazonaws.com:5432/dbelasdemais");
+	    //dataSource.setUsername("admelasdemais");
+	    //dataSource.setPassword("elasdemais1212");
+	    
+	    dataSource.setUrl("jdbc:postgresql://localhost:5432/dbcatalogo");	    
 	    dataSource.setUsername("postgres");
 	    dataSource.setPassword("12345678");
+	    
 	    dataSource.setDriverClassName("org.postgresql.Driver");
 
         factoryBean.setDataSource(dataSource);

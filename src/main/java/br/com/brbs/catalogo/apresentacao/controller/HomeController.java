@@ -45,4 +45,30 @@ public class HomeController {
 		
 		return view;
 	}
+	
+	
+	@RequestMapping("/t2")
+	public ModelAndView index2() {
+		List<Pessoa> lista = null;	
+		List<Pessoa> listaDestaque = null;
+		ModelAndView view = new ModelAndView("index2");
+		try {
+			lista = pessoaDAO.pessoasPainel();		
+			view.addObject("pessoas", lista);
+			
+			listaDestaque = pessoaDAO.pessoasDestaque();
+			view.addObject("pessoasd", listaDestaque);
+		} catch (Exception e) {
+			
+			LOG.info("Problema na consulta inicial:", e);
+			return new ModelAndView("erro");
+		}
+		
+		if(listaDestaque!=null) {
+			for(Pessoa pessoa:listaDestaque) {
+				System.out.println(pessoa.getLocalFotoDestaque());
+			}
+		}
+		return view;
+	}
 }

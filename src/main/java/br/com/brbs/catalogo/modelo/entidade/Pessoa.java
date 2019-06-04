@@ -3,6 +3,8 @@
  */
 package br.com.brbs.catalogo.modelo.entidade;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -105,6 +107,15 @@ public class Pessoa {
 	
 	@Transient
 	String telefoneFormatado;
+	
+	@Transient
+	String precoFormatado;
+	
+	@Transient
+	String alturaFormatado;
+	
+	@Transient
+	String pesoFormatado;
 	
 	public MultipartFile getFoton() {
 		return foton;
@@ -299,6 +310,43 @@ public class Pessoa {
 
 	public void setDataAlteracao(Calendar dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
+	}
+
+	public String getPrecoFormatado() {
+		
+		NumberFormat format = NumberFormat.getCurrencyInstance();
+		if(this.getPreco()!=null) {
+			precoFormatado = format.format(this.getPreco());
+		}
+		return precoFormatado;
+	}
+
+	public void setPrecoFormatado(String precoFormatado) {
+		this.precoFormatado = precoFormatado;
+	}
+
+	public String getAlturaFormatado() {
+		DecimalFormat format = new DecimalFormat("0.00");
+		if(this.getAltura()!=null) {
+			this.setAlturaFormatado(format.format(this.getAltura())+"&nbspM");
+		}
+		return alturaFormatado;
+	}
+
+	public void setAlturaFormatado(String alturaFormatado) {
+		this.alturaFormatado = alturaFormatado;
+	}
+
+	public String getPesoFormatado() {
+		NumberFormat format = NumberFormat.getIntegerInstance();
+		if(this.getPeso()!=null) {
+			this.setPesoFormatado(format.format(this.getPeso())+"&nbspKG");
+		}
+		return pesoFormatado;
+	}
+
+	public void setPesoFormatado(String pesoFormatado) {
+		this.pesoFormatado = pesoFormatado;
 	}
 
 }

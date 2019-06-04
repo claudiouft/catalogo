@@ -29,17 +29,17 @@ public class PessoaService {
 	@Autowired
 	private FotoDAO fotoDAO;
 	
-	//@Autowired
-	//private FileSave fileSave;
-	
 	@Autowired
-	private FileSaveAmazon fileSaveAmazon; 
+	private FileSave fileSave;
+	
+	//@Autowired
+	//private FileSaveAmazon fileSave; 
 	
 	public void gravar(MultipartFile fotoPrincipal, MultipartFile fotoDestaque, Pessoa pessoa) {
 		retirarMascara(pessoa);
 		Pessoa pessoaRetorno = pessoaDAO.gravarRetorno(pessoa);
-		String localFotoPrincipal = fileSaveAmazon.salvarImagem(fotoPrincipal, pessoaRetorno,TipoFotoEnum.PRINCIPAL);
-		String localFotoDestaque = fileSaveAmazon.salvarImagem(fotoDestaque, pessoaRetorno,TipoFotoEnum.DESTAQUE);
+		String localFotoPrincipal = fileSave.salvarImagem(fotoPrincipal, pessoaRetorno,TipoFotoEnum.PERFIL);
+		String localFotoDestaque = fileSave.salvarImagem(fotoDestaque, pessoaRetorno,TipoFotoEnum.DESTAQUE);
 		pessoaRetorno.setLocalFotoPrincipal(localFotoPrincipal);
 		pessoaRetorno.setLocalFotoDestaque(localFotoDestaque);		
 		pessoaDAO.alterar(pessoaRetorno);
@@ -60,7 +60,7 @@ public class PessoaService {
 		Pessoa pessoaBanco = obterPessoa(pessoa.getId());
 		if(houveAlteracaoNaFotoPrincipal(filePrincipal)) {
 			
-			String localFoto = fileSaveAmazon.salvarImagem(filePrincipal, pessoa,TipoFotoEnum.PRINCIPAL);
+			String localFoto = fileSave.salvarImagem(filePrincipal, pessoa,TipoFotoEnum.PERFIL);
 			pessoa.setLocalFotoPrincipal(localFoto);
 		}else {
 			pessoa.setLocalFotoPrincipal(pessoaBanco.getLocalFotoPrincipal());
@@ -68,7 +68,7 @@ public class PessoaService {
 		
 		if(houveAlteracaoNaFotoPrincipal(fileDestaque)) {
 			
-			String localFoto = fileSaveAmazon.salvarImagem(fileDestaque, pessoa,TipoFotoEnum.DESTAQUE);
+			String localFoto = fileSave.salvarImagem(fileDestaque, pessoa,TipoFotoEnum.DESTAQUE);
 			pessoa.setLocalFotoDestaque(localFoto);
 		}else {
 			pessoa.setLocalFotoDestaque(pessoaBanco.getLocalFotoDestaque());
@@ -96,7 +96,7 @@ public class PessoaService {
 		String localFoto = "";
 		Pessoa pessoaTemp = obterPessoa(pessoa.getId());
 		for(MultipartFile foto:listaFotos) {
-			localFoto = fileSaveAmazon.salvarImagem(foto, pessoaTemp,TipoFotoEnum.SECUNDARIO);
+			localFoto = fileSave.salvarImagem(foto, pessoaTemp,TipoFotoEnum.SECUNDARIO);
 			Foto fotoTemp = prepararFoto(pessoaTemp,localFoto);
 			fotoDAO.gravar(fotoTemp);
 		}

@@ -26,7 +26,8 @@
 				<div class="rown">
 					<div class="col-xs-6 col=sm-3 col-md-4">
 						<a href="prepararAlterar?idPessoa=${painel.id}" class="thumbnail">
-							<img src="<c:url value="/diretorio_imagens/${painel.localFotoPrincipal}"/>">
+						
+							<img class="img-responsive" src="${painel.localFotoPrincipal}">
 							<div class="caption">
 								<h4>${painel.nomeFantasia}</h4>
 								<h4>${painel.telefone}</h4>

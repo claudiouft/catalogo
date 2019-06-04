@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import br.com.brbs.catalogo.apresentacao.controller.AdministracaoController;
 import br.com.brbs.catalogo.apresentacao.controller.HomeController;
 import br.com.brbs.catalogo.modelo.entidade.Foto;
 import br.com.brbs.catalogo.negocio.persistencia.PessoaDAO;
@@ -26,6 +27,7 @@ import br.com.brbs.catalogo.negocio.util.Constantes;
 @EnableWebMvc
 @ComponentScan(basePackageClasses = { 
 		HomeController.class, 
+		AdministracaoController.class,
 		PessoaDAO.class,
 		PessoaService.class,
 		Foto.class,

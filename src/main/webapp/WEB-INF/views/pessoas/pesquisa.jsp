@@ -63,8 +63,15 @@
 							<c:if test="${p1.ativo=='S'}"> <label style="color: green;">(ATIVA)</label> </c:if>
 							<c:if test="${p1.ativo=='N'}"> <label style="color: red;">(DESATIVADA)</label></c:if>
 						</td>
-						<td> 
-							<img height="80" width="120" src="<c:url value="${p1.localFotoPrincipal}"/>"/>						
+						<td>
+						<!-- 
+							LOCALHOST
+							<img height="100" width="100" src="<c:url value="/diretorio_imagens/${p1.localFotoPrincipal}"/>"/>
+							
+							REMOTO
+							<img height="100" width="100" src="${p1.localFotoPrincipal}"/>
+						 -->
+						<img height="100" width="100" src="${p1.localFotoPrincipal}"/>
 						</td>
 						<td align="center" valign="middle">
 							<a href="prepararAlterar?idPessoa=${p1.id}" 

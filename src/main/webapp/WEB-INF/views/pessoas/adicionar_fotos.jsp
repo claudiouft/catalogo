@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +31,14 @@
 			<c:forEach items="${pessoa.listaFotos}" var="foto">
 				<tr>
 					<td> 
+						<!-- 
+						LOCALHOST
 						<img height="180" width="240" src="<c:url value="/diretorio_imagens/${foto.localFoto}"/>"/>						
+						REMOTO
+						<img class="img-responsive" src="${foto.localFoto}">
+						 -->
+						<img height="15%" width="15%" src="${foto.localFoto}">		
+						<label>${foto.localFoto}</label>		
 					</td>
 					<td align="center" valign="middle">
 						<a href="desativarFoto?idFoto=${foto.id}"

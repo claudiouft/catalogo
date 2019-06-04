@@ -1,27 +1,42 @@
-<!-- INICIO MENU -->
-	<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" 
-						class="navbar-toggle collapsed"
-						data-toggle="collapse" 
-						data-target="#bs-example-navbar-collapse-1"
-						aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/catalogo">Catálogo</a>
-			</div>
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="/catalogo/pessoas/prepararPainel">Painel</a></li>
-					<li><a href="/catalogo/pessoas/prepararCadastro">Cadastro</a></li>
-					<li><a href="/catalogo/pessoas/consulta">Listagem</a></li>
-					<li><a href="/catalogo/pessoas/pesquisas">Pesquisa</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-<!-- INICIO MENU -->
+<%@ page language="java"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+		<!-- header
+   ================================================== -->
+   <header id="main-header">
+
+   	<div class="row">
+
+	      <div class="logo">
+	         <a href="index.html">Elas Demais</a>
+	      </div>
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-icon">Menu</span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-icon">Menu</span>
+         	</a>            
+
+	         <ul id="nav" class="nav">
+	            <li><a class="smoothscroll" href="#hero">Início</a></li>
+		        <li><a class="smoothscroll" href="#portfolio">Morenas</a></li>
+	            <li><a class="smoothscroll" href="#services">Loiras</a></li>
+	            <li><a class="smoothscroll" href="#about">Destaques</a></li>
+	         </ul> <!-- end #nav -->
+
+	      </nav> <!-- end #nav-wrap -->
+
+	      <ul class="header-social">
+	        	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	        	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	        	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+	      </ul>      
+
+	   </div>
+
+   </header> <!-- end header -->
+
+

@@ -183,6 +183,7 @@
 						<div class="form-group">	
 					        <label for="filep">Foto Principal:</label>
 					        <input type="file" name="filep" id="filep" class="form-control" value="${pessoa.localFotoPrincipal}" />
+					        <label>${pessoa.localFotoPrincipal}</label>
 					    </div>
 					</div>
 				</div>
@@ -191,6 +192,7 @@
 						<div class="form-group">	
 					        <label for="filed">Foto Destaque:</label>
 					        <input type="file" name="filed" id="filed" class="form-control" value="${pessoa.localFotoDestaque}" />
+					        <labe>${pessoa.localFotoDestaque}</labe>
 					    </div>
 					</div>
 				</div>	

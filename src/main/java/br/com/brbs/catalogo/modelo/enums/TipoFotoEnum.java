@@ -9,9 +9,10 @@ package br.com.brbs.catalogo.modelo.enums;
  */
 public enum TipoFotoEnum {
 
-		PRINCIPAL("P"),
-		SECUNDARIO("S"),
-		DESTAQUE("D");
+		PERFIL("P"),
+		DESTAQUE("D"),
+		SECUNDARIO("S");
+		
 	
 	private String valor;
 	
